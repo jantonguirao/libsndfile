@@ -397,6 +397,8 @@ dnl  Check for MPEG libraris liblame
 ac_cv_lame="no"
 ac_cv_mpg123="no"
 HAVE_MPEG=0
+EXTERNAL_MPEG_REQUIRE=""
+EXTERNAL_MPEG_LIBS=""
 
 AS_IF([test -n "$PKG_CONFIG"], [
 		AS_IF([test "x$enable_mpeg" = "xno"], [
@@ -422,6 +424,7 @@ AS_IF([test -n "$PKG_CONFIG"], [
 						enable_mpeg="yes"
 						HAVE_MPEG=1
 						EXTERNAL_MPEG_REQUIRE="libmpg123"
+						EXTERNAL_MPEG_LIBS="-lmp3lame"
 						MPEG_CFLAGS="$MPG123_CFLAGS"
 						MPEG_LIBS="$MPG123_LIBS"
 					], [
