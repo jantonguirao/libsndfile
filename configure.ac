@@ -399,6 +399,7 @@ ac_cv_mpg123="no"
 HAVE_MPEG=0
 MPEG_CFLAGS=""
 MPEG_LIBS=""
+EXTERNAL_MPEG_REQUIRE=""
 
 AS_IF([test -n "$PKG_CONFIG"], [
 		AS_IF([test "x$enable_mpeg" = "xno"], [
@@ -423,6 +424,7 @@ AS_IF([test -n "$PKG_CONFIG"], [
 				AS_IF([test "x$ac_cv_lame$ac_cv_mpg123" = "xyesyes"], [
 						enable_mpeg="yes"
 						HAVE_MPEG=1
+						MPEG_REQUIRE="libmpg123"
 						MPEG_CFLAGS="$MPG123_CFLAGS"
 						MPEG_LIBS="$MPG123_LIBS"
 					], [
