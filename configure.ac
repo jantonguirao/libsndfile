@@ -423,7 +423,7 @@ AS_IF([test -n "$PKG_CONFIG"], [
 						HAVE_MPEG=1
 						EXTERNAL_MPEG_REQUIRE="libmpg123"
 						MPEG_CFLAGS="$MPG123_CFLAGS"
-						MPEG_LIBS="-lmp3lame"
+						MPEG_LIBS="$MPG123_LIBS"
 					], [
 						enable_mpeg="no"
 						AS_ECHO([""])
